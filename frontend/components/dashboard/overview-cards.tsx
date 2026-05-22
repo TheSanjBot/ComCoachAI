@@ -47,7 +47,7 @@ export function OverviewCards({
       {items.map((item) => {
         const Icon = item.icon;
         return (
-          <Card key={item.label} className="bg-white/75">
+          <Card key={item.label} className="panel-surface border-white/10 shadow-panel-glow">
             <div className="mb-3 flex items-center justify-between">
               <CardDescription>{item.label}</CardDescription>
               <span className="rounded-full bg-secondary p-2">
@@ -62,4 +62,3 @@ export function OverviewCards({
     </div>
   );
 }
-

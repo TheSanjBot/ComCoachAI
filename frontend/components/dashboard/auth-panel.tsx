@@ -46,7 +46,7 @@ export function AuthPanel({ onAuthenticated }: AuthPanelProps) {
   }
 
   return (
-    <Card className="border-primary/10 bg-white/90">
+    <Card className="panel-glass border-white/10 shadow-panel-glow">
       <div className="mb-5 flex items-center justify-between">
         <div>
           <CardTitle>Coach Access</CardTitle>
@@ -56,14 +56,14 @@ export function AuthPanel({ onAuthenticated }: AuthPanelProps) {
         </div>
         <div className="rounded-full bg-secondary/70 p-1">
           <button
-            className={`rounded-full px-3 py-1 text-sm ${mode === "signup" ? "bg-white" : ""}`}
+            className={`rounded-full border px-3 py-1.5 font-mono text-xs uppercase tracking-[0.16em] transition-all duration-200 ${mode === "signup" ? "border-primary bg-primary/15 text-primary shadow-orange-glow" : "border-white/10 bg-white/[0.03] text-muted-foreground hover:border-white/20 hover:text-foreground"}`}
             onClick={() => setMode("signup")}
             type="button"
           >
             Sign up
           </button>
           <button
-            className={`rounded-full px-3 py-1 text-sm ${mode === "login" ? "bg-white" : ""}`}
+            className={`rounded-full border px-3 py-1.5 font-mono text-xs uppercase tracking-[0.16em] transition-all duration-200 ${mode === "login" ? "border-primary bg-primary/15 text-primary shadow-orange-glow" : "border-white/10 bg-white/[0.03] text-muted-foreground hover:border-white/20 hover:text-foreground"}`}
             onClick={() => setMode("login")}
             type="button"
           >
@@ -74,7 +74,7 @@ export function AuthPanel({ onAuthenticated }: AuthPanelProps) {
 
       <div className="grid gap-3">
         <input
-          className="rounded-2xl border border-border bg-white px-4 py-3 outline-none"
+          className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
           onChange={(event) =>
             setForm((current) => ({ ...current, email: event.target.value }))
           }
@@ -84,7 +84,7 @@ export function AuthPanel({ onAuthenticated }: AuthPanelProps) {
         />
         {mode === "signup" && (
           <input
-            className="rounded-2xl border border-border bg-white px-4 py-3 outline-none"
+            className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
             onChange={(event) =>
               setForm((current) => ({ ...current, full_name: event.target.value }))
             }
@@ -94,7 +94,7 @@ export function AuthPanel({ onAuthenticated }: AuthPanelProps) {
           />
         )}
         <input
-          className="rounded-2xl border border-border bg-white px-4 py-3 outline-none"
+          className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
           onChange={(event) =>
             setForm((current) => ({ ...current, password: event.target.value }))
           }
@@ -110,4 +110,3 @@ export function AuthPanel({ onAuthenticated }: AuthPanelProps) {
     </Card>
   );
 }
-

@@ -34,8 +34,8 @@ function StudioPageContent() {
 
   if (status === "loading") {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,_#f7f2ea_0%,_#eef3f3_45%,_#e0ebe8_100%)]">
-        <div className="rounded-full border border-foreground/10 bg-white/70 px-5 py-3 text-sm font-medium text-foreground/70 shadow-halo">
+      <main className="flex min-h-screen items-center justify-center bg-background">
+        <div className="rounded-full border border-white/10 bg-white/[0.05] px-5 py-3 font-mono text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground shadow-orange-glow">
           Preparing your recording studio...
         </div>
       </main>
@@ -70,8 +70,8 @@ function StudioPageContent() {
 
 function StudioFallback({ title, description }: { title: string; description: string }) {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,_#f7f2ea_0%,_#eef3f3_45%,_#e0ebe8_100%)] px-6">
-      <Card className="w-full max-w-2xl border-white/70 bg-white/84">
+    <main className="flex min-h-screen items-center justify-center bg-background px-6">
+      <Card className="panel-glass w-full max-w-2xl">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>

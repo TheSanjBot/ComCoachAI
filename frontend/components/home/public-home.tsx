@@ -46,10 +46,11 @@ type PublicHomeProps = {
 
 export function PublicHome({ notice }: PublicHomeProps) {
   return (
-    <main className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(227,197,165,0.38),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(76,140,144,0.2),_transparent_28%),linear-gradient(135deg,_#f8f4ec_0%,_#eef6f4_50%,_#dceae7_100%)] px-6 py-10">
-      <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-6xl flex-col justify-center gap-10">
+    <main className="relative overflow-hidden bg-background px-6 py-10">
+      <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-40" />
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] max-w-6xl flex-col justify-center gap-10">
         {notice ? (
-          <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          <div className="rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm text-primary shadow-orange-glow">
             {notice}
           </div>
         ) : null}
@@ -63,7 +64,7 @@ export function PublicHome({ notice }: PublicHomeProps) {
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <section className="space-y-6">
               <h1 className="max-w-3xl text-5xl font-semibold leading-tight sm:text-6xl">
-                A communication coaching workspace that feels ready for real practice.
+                A communication coaching workspace built for <span className="text-gradient-gold">real practice.</span>
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
                 Practice interviews, rehearse public speaking, and benchmark your resume from one
@@ -81,7 +82,7 @@ export function PublicHome({ notice }: PublicHomeProps) {
               </div>
             </section>
 
-            <Card className="border-white/70 bg-white/85 shadow-[0_30px_120px_rgba(22,52,58,0.12)]">
+            <Card className="panel-glass shadow-panel-glow">
               <CardHeader>
                 <CardTitle>Inside the coaching workspace</CardTitle>
                 <CardDescription>
@@ -91,12 +92,12 @@ export function PublicHome({ notice }: PublicHomeProps) {
               </CardHeader>
               <CardContent className="grid gap-3 text-sm text-muted-foreground">
                 {quickStats.map(({ label, value, icon: Icon }) => (
-                  <div key={label} className="flex items-center justify-between rounded-2xl bg-muted/80 p-4">
+                  <div key={label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                     <div className="flex items-center gap-3 text-foreground">
-                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/30 bg-primary/12 text-primary shadow-orange-glow">
                         <Icon className="h-4 w-4" />
                       </div>
-                      <span className="font-medium">{label}</span>
+                      <span className="font-mono text-xs uppercase tracking-[0.16em]">{label}</span>
                     </div>
                     <span className="text-sm font-semibold text-foreground/80">{value}</span>
                   </div>
@@ -114,9 +115,9 @@ export function PublicHome({ notice }: PublicHomeProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.1 + index * 0.08 }}
             >
-              <Card className="h-full border-foreground/10 bg-white/78">
+              <Card className="panel-surface h-full">
                 <CardHeader>
-                  <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/30 bg-primary/12 text-primary shadow-orange-glow">
                     <Icon className="h-5 w-5" />
                   </div>
                   <CardTitle>{title}</CardTitle>

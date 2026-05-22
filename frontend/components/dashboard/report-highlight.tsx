@@ -23,7 +23,7 @@ export function ReportHighlight({ report }: { report: Report | null }) {
             <div className="mt-2 flex flex-wrap gap-2">
               {report.strengths.map((strength) => (
                 <span
-                  className="rounded-full bg-white/15 px-3 py-1 text-sm"
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-foreground/85"
                   key={strength}
                 >
                   {strength}
@@ -50,4 +50,3 @@ export function ReportHighlight({ report }: { report: Report | null }) {
     </Card>
   );
 }
-

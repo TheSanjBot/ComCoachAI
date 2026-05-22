@@ -44,24 +44,25 @@ function formatDate(dateValue: string) {
 
 export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProps) {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(227,197,165,0.34),_transparent_24%),radial-gradient(circle_at_top_right,_rgba(76,140,144,0.18),_transparent_26%),linear-gradient(140deg,_#f8f4ec_0%,_#eff7f5_46%,_#dceae7_100%)] px-6 py-8">
-      <div className="mx-auto max-w-7xl space-y-8">
+    <main className="relative min-h-screen overflow-hidden bg-background px-6 py-8">
+      <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-35" />
+      <div className="relative z-10 mx-auto max-w-7xl space-y-8">
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           className="grid gap-5 xl:grid-cols-[1.18fr_0.82fr]"
         >
-          <Card className="border-white/70 bg-white/84">
+          <Card className="panel-glass">
             <CardContent className="p-6">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                 <div className="space-y-4">
-                  <div className="inline-flex rounded-full border border-foreground/10 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-foreground/60">
+                  <div className="inline-flex rounded-full border border-primary/30 bg-primary/12 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-[0.24em] text-primary shadow-orange-glow">
                     Coaching home
                   </div>
                   <div className="space-y-3">
                     <h1 className="max-w-3xl text-4xl font-semibold leading-tight">
-                      Welcome back, {overview.welcome_name}. Let&apos;s keep your communication sharp.
+                      Welcome back, {overview.welcome_name}. Let&apos;s keep your communication <span className="text-gradient-gold">sharp.</span>
                     </h1>
                     <p className="max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
                       Pick the mode you want to work on next, review your momentum, and jump back
@@ -97,11 +98,11 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
                     note: "Most repeated coaching signal"
                   }
                 ].map(({ icon: Icon, label, value, note }) => (
-                  <div key={label} className="rounded-[1.75rem] bg-muted/80 p-4">
-                    <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <div key={label} className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-4">
+                    <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/30 bg-primary/12 text-primary shadow-orange-glow">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       {label}
                     </p>
                     <p className="mt-2 text-lg font-semibold text-foreground">{value}</p>
@@ -112,7 +113,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             </CardContent>
           </Card>
 
-          <Card className="border-white/70 bg-[linear-gradient(165deg,_rgba(35,82,90,0.96),_rgba(19,58,64,0.94))] text-white">
+          <Card className="overflow-hidden border-primary/20 bg-[linear-gradient(160deg,rgba(15,17,21,0.98),rgba(3,3,4,0.96))] text-white shadow-orange-glow-subtle">
             <CardHeader>
               <CardTitle className="text-white">Priority actions</CardTitle>
               <CardDescription className="text-white/75">
@@ -123,7 +124,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
               {overview.priority_actions.map((action, index) => (
                 <div
                   key={`${index}-${action}`}
-                  className="rounded-2xl bg-white/10 px-4 py-3 text-sm leading-6 text-white/90"
+                  className="rounded-2xl border border-primary/20 bg-white/[0.04] px-4 py-3 text-sm leading-6 text-white/90"
                 >
                   {action}
                 </div>
@@ -138,7 +139,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Choose a mode</CardTitle>
                 <CardDescription>
@@ -159,7 +160,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             transition={{ duration: 0.5, delay: 0.12 }}
             className="grid gap-5"
           >
-            <Card className="border-white/70 bg-white/84">
+            <Card className="panel-surface">
               <CardHeader>
                 <CardTitle>Scoreboard</CardTitle>
                 <CardDescription>
@@ -169,10 +170,10 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
               <CardContent className="grid gap-4">
                 <div className="grid gap-4 sm:grid-cols-3">
                   {overview.score_summaries.map((item) => (
-                    <div key={item.label} className="rounded-[1.5rem] bg-muted/80 p-4">
+                    <div key={item.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-foreground">{item.label}</span>
-                        <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                        <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">{item.label}</span>
+                        <span className="rounded-full border border-primary/25 bg-primary/12 px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
                           {item.delta >= 0 ? `+${item.delta}` : item.delta}
                         </span>
                       </div>
@@ -192,7 +193,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.18 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Momentum trend</CardTitle>
                 <CardDescription>
@@ -210,7 +211,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.24 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Mode performance</CardTitle>
                 <CardDescription>
@@ -230,7 +231,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Recommended courses</CardTitle>
                 <CardDescription>
@@ -254,7 +255,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.36 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Recent reports</CardTitle>
                 <CardDescription>
@@ -264,7 +265,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
               <CardContent className="space-y-4">
                 {overview.recent_reports.length ? (
                   overview.recent_reports.map((report) => (
-                    <div key={report.id} className="rounded-[1.5rem] bg-muted/80 p-4">
+                    <div key={report.id} className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                           <p className="text-base font-semibold text-foreground">{report.title}</p>
@@ -272,7 +273,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
                             {report.mode} / {formatDate(report.completed_at)}
                           </p>
                         </div>
-                        <span className="inline-flex rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-foreground/70">
+                        <span className="inline-flex rounded-full border border-primary/25 bg-primary/12 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
                           {report.confidence_score}/100 confidence
                         </span>
                       </div>
@@ -293,7 +294,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.42 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Interview history</CardTitle>
                 <CardDescription>
@@ -305,7 +306,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
                   overview.interview_history.map((item) => (
                     <div
                       key={item.id}
-                      className="flex flex-col gap-4 rounded-[1.5rem] bg-muted/80 p-4 sm:flex-row sm:items-center sm:justify-between"
+                      className="flex flex-col gap-4 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 sm:flex-row sm:items-center sm:justify-between"
                     >
                       <div className="space-y-1">
                         <p className="text-base font-semibold text-foreground">
@@ -332,7 +333,7 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.48 }}
           >
-            <Card className="h-full border-white/70 bg-white/84">
+            <Card className="panel-surface h-full">
               <CardHeader>
                 <CardTitle>Session volume</CardTitle>
                 <CardDescription>
@@ -340,20 +341,20 @@ export function AuthenticatedHome({ overview, onSignOut }: AuthenticatedHomeProp
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="rounded-[1.75rem] bg-[linear-gradient(160deg,_rgba(55,96,102,0.96),_rgba(27,70,76,0.96))] p-6 text-white">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/65">
+                <div className="rounded-[1.75rem] border border-primary/20 bg-[linear-gradient(160deg,rgba(15,17,21,0.98),rgba(3,3,4,0.96))] p-6 text-white shadow-orange-glow-subtle">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-white/65">
                     Total tracked sessions
                   </p>
                   <p className="mt-3 text-5xl font-semibold">{overview.total_sessions}</p>
                   <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-2xl bg-white/10 p-4">
+                    <div className="rounded-2xl border border-primary/20 bg-white/[0.04] p-4">
                       <p className="text-sm font-semibold text-white">Recommended next mode</p>
                       <p className="mt-2 text-sm leading-6 text-white/75">
                         {overview.mode_cards.find((item) => item.slug === overview.recommended_mode_slug)?.title ??
                           "Choose any mode"}
                       </p>
                     </div>
-                    <div className="rounded-2xl bg-white/10 p-4">
+                    <div className="rounded-2xl border border-primary/20 bg-white/[0.04] p-4">
                       <p className="text-sm font-semibold text-white">Focus signal</p>
                       <p className="mt-2 text-sm leading-6 text-white/75">{overview.focus_area}</p>
                     </div>
@@ -373,10 +374,10 @@ function ModeLaunchCard({ mode }: { mode: ModeCard }) {
   const modeSlug = mode.slug as ModeSlug;
 
   return (
-    <div className="rounded-[1.8rem] border border-white/70 bg-muted/72 p-5 transition hover:bg-white/90">
+    <div className="rounded-[1.8rem] border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.05] hover:shadow-orange-glow-subtle">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="space-y-3">
-          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 text-primary">
+          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/25 bg-primary/12 text-primary shadow-orange-glow">
             <Icon className="h-5 w-5" />
           </div>
           <div>
@@ -384,14 +385,14 @@ function ModeLaunchCard({ mode }: { mode: ModeCard }) {
             <p className="mt-2 text-sm leading-6 text-muted-foreground">{mode.description}</p>
           </div>
         </div>
-        <span className="inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground/70">
+        <span className="inline-flex rounded-full border border-primary/25 bg-primary/12 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
           {mode.status}
         </span>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-foreground/70">
-        <span className="inline-flex rounded-full bg-white/85 px-3 py-2">{mode.primary_focus}</span>
-        <span className="inline-flex rounded-full bg-white/85 px-3 py-2">
+      <div className="mt-4 flex flex-wrap gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+        <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-2">{mode.primary_focus}</span>
+        <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-2">
           {mode.estimated_duration_minutes} min
         </span>
       </div>
@@ -413,7 +414,7 @@ function RecommendationCard({ item }: { item: FeaturedRecommendation }) {
       href={item.url}
       target="_blank"
       rel="noreferrer"
-      className="block rounded-[1.5rem] border border-white/70 bg-muted/72 p-4 transition hover:bg-white/90"
+      className="block rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white/[0.05]"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
@@ -425,7 +426,7 @@ function RecommendationCard({ item }: { item: FeaturedRecommendation }) {
             From {item.source_mode}
           </p>
         </div>
-        <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/90 text-primary">
+        <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/25 bg-primary/12 text-primary shadow-orange-glow">
           <BookOpen className="h-4 w-4" />
         </div>
       </div>
@@ -435,7 +436,7 @@ function RecommendationCard({ item }: { item: FeaturedRecommendation }) {
 
 function ScorePill({ label, value }: { label: string; value: number }) {
   return (
-    <span className="inline-flex rounded-full bg-white/85 px-3 py-2 text-xs font-semibold text-foreground/75">
+    <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
       {label}: {value}/100
     </span>
   );
@@ -443,7 +444,7 @@ function ScorePill({ label, value }: { label: string; value: number }) {
 
 function EmptyState({ copy }: { copy: string }) {
   return (
-    <div className="rounded-[1.5rem] border border-dashed border-border bg-muted/60 p-4 text-sm leading-6 text-muted-foreground">
+    <div className="rounded-[1.5rem] border border-dashed border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-muted-foreground">
       {copy}
     </div>
   );

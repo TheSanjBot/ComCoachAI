@@ -66,8 +66,9 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(227,197,165,0.38),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(116,160,153,0.22),_transparent_30%),linear-gradient(145deg,_#f7f1e8_0%,_#edf3f2_46%,_#dde9e4_100%)] px-6 py-8">
-      <div className="mx-auto max-w-7xl space-y-8">
+    <main className="relative min-h-screen overflow-hidden bg-background px-6 py-8">
+      <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-35" />
+      <div className="relative z-10 mx-auto max-w-7xl space-y-8">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-2">
             <h1 className="text-4xl font-semibold leading-tight">{config.studioTitle}</h1>
@@ -99,7 +100,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
         ) : null}
 
         <section className="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
-          <Card className="border-white/70 bg-white/82">
+          <Card className="panel-surface">
             <CardHeader>
               <CardTitle>Live capture</CardTitle>
               <CardDescription>
@@ -107,7 +108,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
-              <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-slate-950 shadow-halo">
+              <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950 shadow-orange-glow-subtle">
                 <video
                   ref={studio.videoRef}
                   autoPlay
@@ -194,7 +195,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
           </Card>
 
           <div className="grid gap-5">
-            <Card className="border-white/70 bg-white/82">
+            <Card className="panel-surface">
               <CardHeader>
                 <CardTitle>Before you record</CardTitle>
                 <CardDescription>
@@ -203,14 +204,14 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
               </CardHeader>
               <CardContent className="space-y-3">
                 {config.checklist.map((item) => (
-                  <div key={item} className="rounded-2xl bg-muted/80 px-4 py-3 text-sm leading-6 text-foreground/85">
+                  <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-foreground/85">
                     {item}
                   </div>
                 ))}
               </CardContent>
             </Card>
 
-            <Card className="border-white/70 bg-white/82">
+            <Card className="panel-surface">
               <CardHeader>
                 <CardTitle>Submit your take</CardTitle>
                 <CardDescription>
@@ -264,7 +265,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
         </section>
 
         <section>
-          <Card className="border-white/70 bg-white/82">
+          <Card className="panel-surface">
             <CardHeader>
               <CardTitle>Playback preview</CardTitle>
               <CardDescription>
@@ -277,11 +278,11 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
                   controls
                   playsInline
                   preload="metadata"
-                  className="aspect-video w-full rounded-[1.5rem] border border-white/70 bg-slate-950 object-cover"
+                  className="aspect-video w-full rounded-[1.5rem] border border-white/10 bg-slate-950 object-cover"
                   src={studio.recordingUrl}
                 />
               ) : (
-                <div className="flex aspect-video items-center justify-center rounded-[1.5rem] border border-dashed border-border bg-muted/70 px-6 text-center text-sm leading-7 text-muted-foreground">
+                <div className="flex aspect-video items-center justify-center rounded-[1.5rem] border border-dashed border-white/10 bg-white/[0.03] px-6 text-center text-sm leading-7 text-muted-foreground">
                   Record a take to preview the captured video here before you save it.
                 </div>
               )}
@@ -291,7 +292,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
 
         {hasReview ? (
           <section className="space-y-5">
-            <Card className="border-white/70 bg-white/82">
+            <Card className="panel-surface">
               <CardHeader>
                 <CardTitle>AI review</CardTitle>
                 <CardDescription>
@@ -389,7 +390,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
                     ) : null}
 
                     {studio.analysisResult ? (
-                      <Card className="border-white/70 bg-muted/55 shadow-none">
+                      <Card className="border-white/10 bg-white/[0.03] shadow-none">
                         <CardHeader>
                           <CardTitle className="text-base">Transcript + delivery diagnostics</CardTitle>
                           <CardDescription>
@@ -397,7 +398,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
                           </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                          <div className="rounded-[1.25rem] bg-white/80 p-4 text-sm leading-7 text-muted-foreground">
+                          <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-4 text-sm leading-7 text-muted-foreground">
                             {studio.analysisResult.transcript.transcript || "No transcript available."}
                           </div>
                           <div className="grid gap-3 sm:grid-cols-2">
@@ -502,7 +503,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
 
             {(interview.finalReport || speaking.coachingResult) ? (
               <section className="grid gap-5 xl:grid-cols-[1fr_1fr]">
-                <Card className="border-white/70 bg-white/82">
+                <Card className="panel-surface">
                   <CardHeader>
                     <CardTitle>Action plan</CardTitle>
                     <CardDescription>
@@ -529,7 +530,7 @@ export function RecordingStudio({ mode, token }: RecordingStudioProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="border-white/70 bg-white/82">
+                <Card className="panel-surface">
                   <CardHeader>
                     <CardTitle>Recommended courses</CardTitle>
                     <CardDescription>
@@ -573,7 +574,7 @@ function SummaryPanel({
   const accentClasses =
     accent === "primary"
       ? "border-primary/20 bg-primary/8 text-foreground"
-      : "border-emerald-200 bg-emerald-50 text-emerald-950";
+      : "border-gold/20 bg-gold/10 text-foreground";
 
   return (
     <div className={`rounded-[1.5rem] border p-5 ${accentClasses}`}>
@@ -593,11 +594,11 @@ function MetricCard({
   icon: LucideIcon;
 }) {
   return (
-    <div className="rounded-[1.5rem] bg-muted/80 p-4">
-      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/80 text-primary">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/25 bg-primary/12 text-primary shadow-orange-glow">
         <Icon className="h-4 w-4" />
       </div>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
       <p className="mt-2 text-base font-semibold text-foreground">{value}</p>
     </div>
   );
@@ -605,9 +606,9 @@ function MetricCard({
 
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between rounded-2xl bg-muted/80 px-4 py-3">
+    <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
       <span>{label}</span>
-      <span className="font-medium text-foreground">{value}</span>
+      <span className="font-mono font-medium text-foreground">{value}</span>
     </div>
   );
 }
@@ -620,9 +621,9 @@ function MessageBox({
   tone: "danger" | "success" | "neutral";
 }) {
   const tones = {
-    danger: "border-red-200 bg-red-50 text-red-700",
-    success: "border-emerald-200 bg-emerald-50 text-emerald-700",
-    neutral: "border-amber-200 bg-amber-50 text-amber-800"
+    danger: "border-red-500/30 bg-red-500/10 text-red-300",
+    success: "border-primary/30 bg-primary/10 text-primary",
+    neutral: "border-gold/25 bg-gold/10 text-gold"
   };
 
   return <div className={`rounded-2xl border px-4 py-3 text-sm ${tones[tone]}`}>{children}</div>;
@@ -638,12 +639,12 @@ function InfoList({
   emptyLabel: string;
 }) {
   return (
-    <div className="rounded-[1.5rem] bg-muted/80 p-4">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
       <p className="text-sm font-semibold text-foreground">{title}</p>
       <div className="mt-3 space-y-2">
         {items.length ? (
           items.map((item, index) => (
-            <div key={`${title}-${index}-${item}`} className="rounded-2xl bg-white/75 px-3 py-2 text-sm leading-6 text-foreground/85">
+            <div key={`${title}-${index}-${item}`} className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm leading-6 text-foreground/85">
               {item}
             </div>
           ))
@@ -666,12 +667,12 @@ function RoadmapList({
   }[];
 }) {
   return (
-    <div className="rounded-[1.5rem] bg-muted/80 p-4">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
       <p className="text-sm font-semibold text-foreground">Roadmap</p>
       <div className="mt-3 space-y-3">
         {items.length ? (
           items.map((item, index) => (
-            <div key={`${item.skill}-${index}`} className="rounded-2xl bg-white/75 p-3">
+            <div key={`${item.skill}-${index}`} className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
               <p className="text-sm font-semibold text-foreground">{item.skill}</p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.next_step}</p>
               {item.resource_title && item.resource_url ? (
@@ -713,7 +714,7 @@ function RecommendationList({
           href={item.url}
           target="_blank"
           rel="noreferrer"
-          className="block rounded-[1.5rem] border border-white/70 bg-muted/72 p-4 transition hover:bg-white/92"
+          className="block rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white/[0.05]"
         >
           <p className="text-base font-semibold text-foreground">{item.title}</p>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -723,7 +724,7 @@ function RecommendationList({
       ))}
     </div>
   ) : (
-    <div className="rounded-[1.5rem] border border-dashed border-border bg-muted/60 p-4 text-sm leading-6 text-muted-foreground">
+    <div className="rounded-[1.5rem] border border-dashed border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-muted-foreground">
       Finish a fuller session to unlock targeted course suggestions here.
     </div>
   );

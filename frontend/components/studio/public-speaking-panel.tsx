@@ -22,7 +22,7 @@ export function PublicSpeakingPanel({
   return (
     <section className="grid gap-5">
       {!speaking.session ? (
-        <Card className="border-white/70 bg-white/82">
+        <Card className="panel-surface">
           <CardHeader>
             <CardTitle>Public-speaking setup</CardTitle>
             <CardDescription>
@@ -36,15 +36,15 @@ export function PublicSpeakingPanel({
             />
 
             {speaking.error ? (
-              <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                {speaking.error}
-              </div>
+                <div className="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                  {speaking.error}
+                </div>
             ) : null}
           </CardContent>
         </Card>
       ) : null}
 
-      <Card className="border-white/70 bg-white/82">
+      <Card className="panel-surface">
         <CardHeader>
           <CardTitle>Speaking flow</CardTitle>
           <CardDescription>
@@ -71,8 +71,8 @@ export function PublicSpeakingPanel({
           </div>
 
           {speaking.session ? (
-            <div className="rounded-[1.5rem] bg-muted/80 p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
+              <p className="font-mono text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                 Rehearsal topic
               </p>
               <p className="mt-3 text-lg font-semibold text-foreground">{speaking.session.topic}</p>
@@ -83,13 +83,13 @@ export function PublicSpeakingPanel({
           ) : null}
 
           {speaking.coachingResult ? (
-            <div className="rounded-[1.5rem] border border-emerald-200 bg-emerald-50 p-5 text-sm leading-7 text-emerald-900/85">
+            <div className="rounded-[1.5rem] border border-primary/25 bg-primary/10 p-5 text-sm leading-7 text-foreground/85 shadow-orange-glow">
               {speaking.coachingResult.summary}
             </div>
           ) : null}
 
           {speaking.error ? (
-            <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            <div className="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
               {speaking.error}
             </div>
           ) : null}
@@ -182,11 +182,11 @@ function MiniMetric({
   icon: typeof Sparkles;
 }) {
   return (
-    <div className="rounded-[1.5rem] bg-muted/80 p-4">
-      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/80 text-primary">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/25 bg-primary/12 text-primary shadow-orange-glow">
         <Icon className="h-4 w-4" />
       </div>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
       <p className="mt-2 text-base font-semibold text-foreground">{value}</p>
     </div>
   );

@@ -1,18 +1,25 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 
 import "./globals.css";
 
 const headingFont = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-heading"
+  variable: "--font-heading",
+  weight: ["400", "500", "600", "700"]
 });
 
-const bodyFont = IBM_Plex_Sans({
+const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600"]
+});
+
+const monoFont = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"]
 });
 
 export const metadata: Metadata = {
@@ -26,8 +33,8 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className="dark">
+      <body className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} font-body`}>
         {children}
       </body>
     </html>

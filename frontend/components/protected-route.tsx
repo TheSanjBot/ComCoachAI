@@ -25,7 +25,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
   if (status === "loading") {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,_#f7f2ea_0%,_#eef3f3_45%,_#e0ebe8_100%)]">
-        <div className="rounded-full border border-foreground/10 bg-white/70 px-5 py-3 text-sm font-medium text-foreground/70 shadow-halo">
+        <div className="rounded-full border border-white/10 bg-white/[0.05] px-5 py-3 font-mono text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground shadow-orange-glow">
           Securing your coaching workspace...
         </div>
       </main>

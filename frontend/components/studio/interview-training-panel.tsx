@@ -42,7 +42,7 @@ export function InterviewTrainingPanel({
   return (
     <section className="grid gap-5">
       {!interview.session ? (
-        <Card className="border-white/70 bg-white/82">
+        <Card className="panel-surface">
           <CardHeader>
             <CardTitle>Interview session setup</CardTitle>
             <CardDescription>
@@ -55,7 +55,7 @@ export function InterviewTrainingPanel({
                 <select
                   value={role}
                   onChange={(event) => setRole(event.target.value as (typeof roles)[number])}
-                  className="flex h-11 w-full rounded-2xl border border-input bg-white/90 px-4 py-2 text-sm text-foreground outline-none transition focus-visible:ring-2 focus-visible:ring-ring"
+                  className="flex h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground outline-none transition-all duration-200 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                 >
                   {roles.map((item) => (
                     <option key={item} value={item}>
@@ -71,7 +71,7 @@ export function InterviewTrainingPanel({
                   onChange={(event) =>
                     setExperienceLevel(event.target.value as "entry-level" | "mid-level" | "senior")
                   }
-                  className="flex h-11 w-full rounded-2xl border border-input bg-white/90 px-4 py-2 text-sm text-foreground outline-none transition focus-visible:ring-2 focus-visible:ring-ring"
+                  className="flex h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground outline-none transition-all duration-200 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                 >
                   <option value="entry-level">Entry-level</option>
                   <option value="mid-level">Mid-level</option>
@@ -95,7 +95,7 @@ export function InterviewTrainingPanel({
                   onChange={(event) => setResumeNotes(event.target.value)}
                   rows={4}
                   placeholder="Paste a few role-relevant strengths or gaps from the resume here."
-                  className="w-full rounded-2xl border border-input bg-white/90 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                 />
               </Field>
             </div>
@@ -117,7 +117,7 @@ export function InterviewTrainingPanel({
             </Button>
 
             {interview.error ? (
-              <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                <div className="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
                 {interview.error}
               </div>
             ) : null}
@@ -125,7 +125,7 @@ export function InterviewTrainingPanel({
         </Card>
       ) : null}
 
-      <Card className="border-white/70 bg-white/82">
+      <Card className="panel-surface">
         <CardHeader>
           <CardTitle>Interview flow</CardTitle>
           <CardDescription>
@@ -134,8 +134,8 @@ export function InterviewTrainingPanel({
         </CardHeader>
         <CardContent className="space-y-5">
           {interview.session?.current_question ? (
-            <div className="rounded-[1.5rem] bg-muted/80 p-5">
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex flex-wrap items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                 <span>{interview.session.role}</span>
                 <span>/</span>
                 <span>{interview.session.current_question.topic}</span>
@@ -149,7 +149,7 @@ export function InterviewTrainingPanel({
                 {interview.session.current_question.expected_concepts.map((concept, index) => (
                   <span
                     key={`${concept}-${index}`}
-                    className="inline-flex rounded-full bg-white/85 px-3 py-2 text-xs font-semibold text-foreground/75"
+                    className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary"
                   >
                     {concept}
                   </span>
@@ -157,7 +157,7 @@ export function InterviewTrainingPanel({
               </div>
             </div>
           ) : (
-            <div className="rounded-[1.5rem] border border-dashed border-border bg-muted/70 px-4 py-6 text-sm leading-7 text-muted-foreground">
+            <div className="rounded-[1.5rem] border border-dashed border-white/10 bg-white/[0.03] px-4 py-6 text-sm leading-7 text-muted-foreground">
               Start an interview session to generate the first role-based question.
             </div>
           )}
@@ -181,12 +181,12 @@ export function InterviewTrainingPanel({
 
           {interview.latestTurn ? (
             <div className="space-y-4">
-              <div className="rounded-[1.5rem] border border-emerald-200 bg-emerald-50 p-5 text-sm leading-7 text-emerald-900/85">
+              <div className="rounded-[1.5rem] border border-primary/25 bg-primary/10 p-5 text-sm leading-7 text-foreground/85 shadow-orange-glow">
                 {interview.latestTurn.technical_evaluation.summary}
               </div>
 
               {interview.latestTurn.next_question ? (
-                <div className="rounded-[1.5rem] bg-primary/8 p-5">
+                <div className="rounded-[1.5rem] border border-primary/20 bg-white/[0.03] p-5">
                   <p className="text-sm font-semibold text-foreground">Next interview question</p>
                   <p className="mt-3 text-base leading-7 text-foreground/90">
                     {interview.latestTurn.next_question.question}
@@ -197,8 +197,8 @@ export function InterviewTrainingPanel({
           ) : null}
 
           {interview.finalReport ? (
-            <div className="space-y-4 rounded-[1.5rem] border border-emerald-200 bg-emerald-50 p-5">
-              <p className="text-lg font-semibold text-emerald-900">Final interview report</p>
+            <div className="space-y-4 rounded-[1.5rem] border border-gold/20 bg-gold/10 p-5 shadow-gold-glow">
+              <p className="text-lg font-semibold text-foreground">Final interview report</p>
               <div className="grid gap-4 sm:grid-cols-2">
                 <MiniMetric
                   label="Avg technical"
@@ -221,14 +221,14 @@ export function InterviewTrainingPanel({
                 items={interview.finalReport.recurring_missing_concepts}
                 emptyLabel="No recurring concept gaps were detected."
               />
-              <p className="text-sm leading-7 text-emerald-900/85">
+              <p className="text-sm leading-7 text-foreground/85">
                 {interview.finalReport.final_coaching_summary}
               </p>
             </div>
           ) : null}
 
           {interview.error ? (
-            <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            <div className="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
               {interview.error}
             </div>
           ) : null}
@@ -272,11 +272,11 @@ function MiniMetric({
   icon: typeof BrainCircuit;
 }) {
   return (
-    <div className="rounded-[1.5rem] bg-muted/80 p-4">
-      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/80 text-primary">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/25 bg-primary/12 text-primary shadow-orange-glow">
         <Icon className="h-4 w-4" />
       </div>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
       <p className="mt-2 text-base font-semibold text-foreground">{value}</p>
     </div>
   );
@@ -292,14 +292,14 @@ function InfoBlock({
   emptyLabel: string;
 }) {
   return (
-    <div className="rounded-[1.5rem] bg-muted/80 p-4">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
       <p className="text-sm font-semibold text-foreground">{title}</p>
       <div className="mt-3 space-y-2">
         {items.length ? (
           items.map((item, index) => (
             <div
               key={`${title}-${index}-${item}`}
-              className="rounded-2xl bg-white/75 px-3 py-2 text-sm leading-6 text-foreground/85"
+              className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm leading-6 text-foreground/85"
             >
               {item}
             </div>

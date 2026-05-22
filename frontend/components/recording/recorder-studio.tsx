@@ -205,7 +205,7 @@ export function RecorderStudio({
                 />
               </div>
               {recorder.previewUrl ? (
-                <div className="rounded-[28px] border border-border bg-white p-3">
+                <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-3 shadow-panel-glow">
                   <video className="aspect-video w-full rounded-[20px]" controls src={recorder.previewUrl} />
                 </div>
               ) : null}
@@ -256,7 +256,7 @@ export function RecorderStudio({
           <div className="grid gap-3">
             <label className="text-sm font-semibold">Target role</label>
             <select
-              className="rounded-2xl border border-border bg-white px-4 py-3 outline-none"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
               onChange={(event) => setRole(event.target.value)}
               value={role}
             >
@@ -270,7 +270,7 @@ export function RecorderStudio({
               <>
                 <label className="text-sm font-semibold">Experience level</label>
                 <select
-                  className="rounded-2xl border border-border bg-white px-4 py-3 outline-none"
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   onChange={(event) => setExperienceLevel(event.target.value)}
                   value={experienceLevel}
                 >
@@ -284,7 +284,7 @@ export function RecorderStudio({
               <>
                 <label className="text-sm font-semibold">Presentation topic</label>
                 <textarea
-                  className="min-h-[110px] rounded-2xl border border-border bg-white px-4 py-3 outline-none"
+                  className="min-h-[110px] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
                   onChange={(event) => setTopic(event.target.value)}
                   value={topic}
                 />
@@ -303,14 +303,14 @@ export function RecorderStudio({
 
           {selectedMode === "resume_analysis" ? (
             <textarea
-              className="min-h-[220px] rounded-[28px] border border-border bg-white px-4 py-4 outline-none"
+              className="min-h-[220px] rounded-[28px] border border-white/10 bg-white/[0.03] px-4 py-4 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
               onChange={(event) => setResumeText(event.target.value)}
               placeholder="Paste resume text here..."
               value={resumeText}
             />
           ) : (
             <textarea
-              className="min-h-[220px] rounded-[28px] border border-border bg-white px-4 py-4 outline-none"
+              className="min-h-[220px] rounded-[28px] border border-white/10 bg-white/[0.03] px-4 py-4 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-white/30 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30"
               onChange={(event) => setTranscript(event.target.value)}
               placeholder="Paste transcript or answer notes after recording..."
               value={transcript}
@@ -318,7 +318,7 @@ export function RecorderStudio({
           )}
 
           {resumeResult ? (
-            <div className="rounded-[28px] bg-white p-5">
+            <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 shadow-panel-glow">
               <p className="text-sm font-semibold">
                 Matching score: {Math.round(resumeResult.matching_score)}
               </p>

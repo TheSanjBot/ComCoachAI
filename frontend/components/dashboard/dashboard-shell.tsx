@@ -117,7 +117,8 @@ export function DashboardShell() {
   }
 
   return (
-    <main className="min-h-screen bg-mesh">
+    <main className="min-h-screen bg-background text-foreground">
+      <div className="pointer-events-none fixed inset-0 bg-grid-pattern opacity-40" />
       <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 lg:px-10">
         <motion.section
           animate={{ opacity: 1, y: 0 }}
@@ -125,33 +126,34 @@ export function DashboardShell() {
           initial={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.45 }}
         >
-          <Card className="overflow-hidden bg-[linear-gradient(135deg,rgba(15,74,69,0.98),rgba(9,27,44,0.95))] text-white">
+          <Card className="panel-glass holographic-gradient overflow-hidden text-white shadow-orange-glow-subtle">
             <div className="flex flex-wrap gap-2">
-              <Badge className="bg-white/10 text-white">AI Communication Coaching</Badge>
-              <Badge className="bg-white/10 text-white">Hybrid Processing</Badge>
-              <Badge className="bg-white/10 text-white">Semantic Memory</Badge>
+              <Badge className="border-primary/30 bg-primary/15 font-mono uppercase tracking-[0.16em] text-primary shadow-orange-glow">AI Communication Coaching</Badge>
+              <Badge className="border-primary/30 bg-primary/15 font-mono uppercase tracking-[0.16em] text-primary shadow-orange-glow">Hybrid Processing</Badge>
+              <Badge className="border-primary/30 bg-primary/15 font-mono uppercase tracking-[0.16em] text-primary shadow-orange-glow">Semantic Memory</Badge>
             </div>
-            <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-              CommCoach AI helps people sound sharper, calmer, and more credible.
+            <h1 className="mt-6 max-w-3xl font-heading text-4xl font-semibold leading-tight md:text-6xl">
+              CommCoach AI helps people sound sharper, calmer, and more
+              <span className="text-gradient-gold"> credible.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 md:text-lg">
               Practice technical interviews, coach public speaking, and diagnose role gaps with a staged pipeline that keeps live capture lightweight and deeper analysis explainable.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4 text-sm text-white/80">
-              <span>Speech intelligence</span>
-              <span>Body-language signals</span>
-              <span>Context-aware follow-ups</span>
-              <span>Personalized upskilling</span>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 font-mono uppercase tracking-[0.14em]">Speech intelligence</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 font-mono uppercase tracking-[0.14em]">Body-language signals</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 font-mono uppercase tracking-[0.14em]">Context-aware follow-ups</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 font-mono uppercase tracking-[0.14em]">Personalized upskilling</span>
             </div>
           </Card>
 
           {token ? (
-            <Card className="flex flex-col justify-between">
+            <Card className="panel-surface flex flex-col justify-between shadow-panel-glow">
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                <p className="font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">
                   Active Coach Profile
                 </p>
-                <h2 className="mt-4 text-3xl font-semibold">{name}</h2>
+                <h2 className="mt-4 font-heading text-3xl font-semibold">{name}</h2>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   Your homepage dashboard stays in one place so you can move between interview prep, speech coaching, and resume analysis without context switching.
                 </p>
@@ -221,4 +223,3 @@ export function DashboardShell() {
     </main>
   );
 }
-
