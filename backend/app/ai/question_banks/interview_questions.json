@@ -1,0 +1,164 @@
+[
+  {
+    "id": "sde-arrays-easy-1",
+    "role": "SDE",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "question": "How would you explain the tradeoff between using an array and a hash map for a lookup-heavy feature?",
+    "followups": [
+      "When would an array still be the better choice even if lookups matter?",
+      "How would sorting affect your decision?"
+    ],
+    "expected_concepts": [
+      "time complexity",
+      "space complexity",
+      "direct indexing",
+      "hash collisions",
+      "ordered traversal"
+    ]
+  },
+  {
+    "id": "frontend-react-medium-1",
+    "role": "Frontend Engineer",
+    "topic": "React Performance",
+    "difficulty": "medium",
+    "question": "A React page feels sluggish after adding several dashboards. How would you investigate and improve performance?",
+    "followups": [
+      "How would you tell whether rendering or network work is the bigger issue?",
+      "What would you optimize first without over-engineering?"
+    ],
+    "expected_concepts": [
+      "profiling",
+      "render bottlenecks",
+      "network waterfall",
+      "state scope",
+      "lazy loading"
+    ]
+  },
+  {
+    "id": "backend-docker-medium-1",
+    "role": "Backend Engineer",
+    "topic": "Docker",
+    "difficulty": "medium",
+    "question": "Explain Docker networking and when you would use bridge, host, and overlay networking.",
+    "followups": [
+      "What is bridge networking in practical terms?",
+      "Why might overlay networking matter in multi-host deployments?"
+    ],
+    "expected_concepts": [
+      "bridge networking",
+      "host networking",
+      "overlay networking",
+      "container communication",
+      "network isolation"
+    ]
+  },
+  {
+    "id": "cloud-kubernetes-hard-1",
+    "role": "Cloud Engineer",
+    "topic": "Kubernetes",
+    "difficulty": "hard",
+    "question": "How would you design a reliable Kubernetes deployment strategy for a customer-facing API with strict uptime goals?",
+    "followups": [
+      "How do readiness and liveness probes influence the rollout?",
+      "What rollback strategy would you choose?"
+    ],
+    "expected_concepts": [
+      "rolling updates",
+      "readiness probes",
+      "liveness probes",
+      "autoscaling",
+      "rollback"
+    ]
+  },
+  {
+    "id": "devops-ci-medium-1",
+    "role": "DevOps Engineer",
+    "topic": "CI/CD",
+    "difficulty": "medium",
+    "question": "Walk me through how you would design a CI/CD pipeline that stays fast while still protecting production quality.",
+    "followups": [
+      "What jobs would you run in parallel?",
+      "Where would you place approval gates or deployment checks?"
+    ],
+    "expected_concepts": [
+      "pipeline stages",
+      "parallel jobs",
+      "automated tests",
+      "deployment gates",
+      "rollback"
+    ]
+  },
+  {
+    "id": "sre-observability-hard-1",
+    "role": "SRE",
+    "topic": "Observability",
+    "difficulty": "hard",
+    "question": "What observability strategy would you use to reduce mean time to recovery for a distributed system?",
+    "followups": [
+      "How do logs, metrics, and traces complement each other?",
+      "Which alerts would you avoid because they create noise?"
+    ],
+    "expected_concepts": [
+      "metrics",
+      "logs",
+      "traces",
+      "alerting",
+      "service level objectives"
+    ]
+  },
+  {
+    "id": "qa-testing-medium-1",
+    "role": "Testing Engineer",
+    "topic": "Test Strategy",
+    "difficulty": "medium",
+    "question": "How would you build a test strategy for a product team that ships quickly but has started seeing regressions?",
+    "followups": [
+      "Which tests would belong in the unit layer versus end-to-end?",
+      "How would you keep flaky tests from slowing everyone down?"
+    ],
+    "expected_concepts": [
+      "test pyramid",
+      "risk-based testing",
+      "regression coverage",
+      "test automation",
+      "flaky tests"
+    ]
+  },
+  {
+    "id": "aiml-model-medium-1",
+    "role": "AI/ML Engineer",
+    "topic": "Model Deployment",
+    "difficulty": "medium",
+    "question": "How would you deploy a machine learning model to production and keep its quality from drifting over time?",
+    "followups": [
+      "Which metrics would you monitor after launch?",
+      "How would you decide when retraining is necessary?"
+    ],
+    "expected_concepts": [
+      "offline evaluation",
+      "online monitoring",
+      "data drift",
+      "model versioning",
+      "retraining"
+    ]
+  },
+  {
+    "id": "data-analyst-sql-easy-1",
+    "role": "Data Analyst",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "If a stakeholder says revenue dropped last week, how would you investigate the problem using SQL and business context?",
+    "followups": [
+      "How would you separate a true product issue from a tracking issue?",
+      "What dimensions would you segment by first?"
+    ],
+    "expected_concepts": [
+      "baseline comparison",
+      "segmentation",
+      "time windows",
+      "data quality",
+      "business context"
+    ]
+  }
+]

@@ -1,0 +1,367 @@
+{
+  "recording_id": "da2ae3cf19b742a7ae103429c1b6f9c6",
+  "mode": "public-speaking",
+  "processing_status": "analyzed",
+  "analyzed_at": "2026-05-21T06:35:55.405515Z",
+  "audio_processing": {
+    "extracted_audio_path": "tests/reports-e2e-live/sessions/647ebb3c-fe51-4e67-82f3-d290793b58d3/public-speaking/da2ae3cf19b742a7ae103429c1b6f9c6/20260521T062904Z-da2ae3cf19b742a7ae103429c1b6f9c6-extracted.wav",
+    "normalized_audio_path": "tests/reports-e2e-live/sessions/647ebb3c-fe51-4e67-82f3-d290793b58d3/public-speaking/da2ae3cf19b742a7ae103429c1b6f9c6/20260521T062904Z-da2ae3cf19b742a7ae103429c1b6f9c6-normalized.wav",
+    "sample_rate": 16000,
+    "duration_seconds": 9.985,
+    "normalization_applied": true,
+    "warnings": []
+  },
+  "transcript": {
+    "transcript": "Hello, I am explaining how Docker networking works. Bridge networking connects containers on the same host. It helps services communicate clearly.",
+    "language": "en",
+    "duration_seconds": 9.985,
+    "segment_count": 3,
+    "word_count": 21,
+    "segments": [
+      {
+        "segment_id": 0,
+        "start": 0.0,
+        "end": 3.24,
+        "text": "Hello, I am explaining how Docker networking works.",
+        "avg_logprob": -0.23251783708110452,
+        "no_speech_prob": 0.0012469547800719738,
+        "words": [
+          {
+            "word": "Hello,",
+            "start": 0.0,
+            "end": 0.34,
+            "probability": 0.8704724311828613
+          },
+          {
+            "word": "I",
+            "start": 0.86,
+            "end": 1.06,
+            "probability": 0.962241530418396
+          },
+          {
+            "word": "am",
+            "start": 1.06,
+            "end": 1.18,
+            "probability": 0.9713942408561707
+          },
+          {
+            "word": "explaining",
+            "start": 1.18,
+            "end": 1.6,
+            "probability": 0.9925742149353027
+          },
+          {
+            "word": "how",
+            "start": 1.6,
+            "end": 1.92,
+            "probability": 0.9925975799560547
+          },
+          {
+            "word": "Docker",
+            "start": 1.92,
+            "end": 2.2,
+            "probability": 0.7055781483650208
+          },
+          {
+            "word": "networking",
+            "start": 2.2,
+            "end": 2.68,
+            "probability": 0.8060063719749451
+          },
+          {
+            "word": "works.",
+            "start": 2.68,
+            "end": 3.24,
+            "probability": 0.9980212450027466
+          }
+        ]
+      },
+      {
+        "segment_id": 1,
+        "start": 4.0,
+        "end": 6.92,
+        "text": "Bridge networking connects containers on the same host.",
+        "avg_logprob": -0.23251783708110452,
+        "no_speech_prob": 0.0012469547800719738,
+        "words": [
+          {
+            "word": "Bridge",
+            "start": 4.0,
+            "end": 4.44,
+            "probability": 0.6844620704650879
+          },
+          {
+            "word": "networking",
+            "start": 4.44,
+            "end": 4.9,
+            "probability": 0.8451802730560303
+          },
+          {
+            "word": "connects",
+            "start": 4.9,
+            "end": 5.42,
+            "probability": 0.9849121570587158
+          },
+          {
+            "word": "containers",
+            "start": 5.42,
+            "end": 5.92,
+            "probability": 0.9947078227996826
+          },
+          {
+            "word": "on",
+            "start": 5.92,
+            "end": 6.22,
+            "probability": 0.9940047860145569
+          },
+          {
+            "word": "the",
+            "start": 6.22,
+            "end": 6.34,
+            "probability": 0.9994903802871704
+          },
+          {
+            "word": "same",
+            "start": 6.34,
+            "end": 6.6,
+            "probability": 0.9984719157218933
+          },
+          {
+            "word": "host.",
+            "start": 6.6,
+            "end": 6.92,
+            "probability": 0.9891932606697083
+          }
+        ]
+      },
+      {
+        "segment_id": 2,
+        "start": 7.88,
+        "end": 9.76,
+        "text": "It helps services communicate clearly.",
+        "avg_logprob": -0.23251783708110452,
+        "no_speech_prob": 0.0012469547800719738,
+        "words": [
+          {
+            "word": "It",
+            "start": 7.88,
+            "end": 8.04,
+            "probability": 0.9727951288223267
+          },
+          {
+            "word": "helps",
+            "start": 8.04,
+            "end": 8.28,
+            "probability": 0.983659029006958
+          },
+          {
+            "word": "services",
+            "start": 8.28,
+            "end": 8.74,
+            "probability": 0.991257905960083
+          },
+          {
+            "word": "communicate",
+            "start": 8.74,
+            "end": 9.4,
+            "probability": 0.9910411238670349
+          },
+          {
+            "word": "clearly.",
+            "start": 9.4,
+            "end": 9.76,
+            "probability": 0.9920145273208618
+          }
+        ]
+      }
+    ],
+    "word_segments": [
+      {
+        "word": "Hello,",
+        "start": 0.0,
+        "end": 0.34,
+        "probability": 0.8704724311828613
+      },
+      {
+        "word": "I",
+        "start": 0.86,
+        "end": 1.06,
+        "probability": 0.962241530418396
+      },
+      {
+        "word": "am",
+        "start": 1.06,
+        "end": 1.18,
+        "probability": 0.9713942408561707
+      },
+      {
+        "word": "explaining",
+        "start": 1.18,
+        "end": 1.6,
+        "probability": 0.9925742149353027
+      },
+      {
+        "word": "how",
+        "start": 1.6,
+        "end": 1.92,
+        "probability": 0.9925975799560547
+      },
+      {
+        "word": "Docker",
+        "start": 1.92,
+        "end": 2.2,
+        "probability": 0.7055781483650208
+      },
+      {
+        "word": "networking",
+        "start": 2.2,
+        "end": 2.68,
+        "probability": 0.8060063719749451
+      },
+      {
+        "word": "works.",
+        "start": 2.68,
+        "end": 3.24,
+        "probability": 0.9980212450027466
+      },
+      {
+        "word": "Bridge",
+        "start": 4.0,
+        "end": 4.44,
+        "probability": 0.6844620704650879
+      },
+      {
+        "word": "networking",
+        "start": 4.44,
+        "end": 4.9,
+        "probability": 0.8451802730560303
+      },
+      {
+        "word": "connects",
+        "start": 4.9,
+        "end": 5.42,
+        "probability": 0.9849121570587158
+      },
+      {
+        "word": "containers",
+        "start": 5.42,
+        "end": 5.92,
+        "probability": 0.9947078227996826
+      },
+      {
+        "word": "on",
+        "start": 5.92,
+        "end": 6.22,
+        "probability": 0.9940047860145569
+      },
+      {
+        "word": "the",
+        "start": 6.22,
+        "end": 6.34,
+        "probability": 0.9994903802871704
+      },
+      {
+        "word": "same",
+        "start": 6.34,
+        "end": 6.6,
+        "probability": 0.9984719157218933
+      },
+      {
+        "word": "host.",
+        "start": 6.6,
+        "end": 6.92,
+        "probability": 0.9891932606697083
+      },
+      {
+        "word": "It",
+        "start": 7.88,
+        "end": 8.04,
+        "probability": 0.9727951288223267
+      },
+      {
+        "word": "helps",
+        "start": 8.04,
+        "end": 8.28,
+        "probability": 0.983659029006958
+      },
+      {
+        "word": "services",
+        "start": 8.28,
+        "end": 8.74,
+        "probability": 0.991257905960083
+      },
+      {
+        "word": "communicate",
+        "start": 8.74,
+        "end": 9.4,
+        "probability": 0.9910411238670349
+      },
+      {
+        "word": "clearly.",
+        "start": 9.4,
+        "end": 9.76,
+        "probability": 0.9920145273208618
+      }
+    ],
+    "warnings": []
+  },
+  "communication_analysis": {
+    "fluency_score": 95,
+    "grammar_score": 100,
+    "filler_word_total": 0,
+    "filler_word_frequency": 0.0,
+    "filler_word_breakdown": [],
+    "pause_count": 2,
+    "average_pause_duration": 0.86,
+    "long_pause_count": 0,
+    "words_per_minute": 126.19,
+    "pace_classification": "ideal",
+    "sentence_quality_score": 75,
+    "lexical_diversity": 0.952,
+    "grammar_issues": [],
+    "strengths": [
+      "Speaking pace is inside the ideal range.",
+      "Filler word usage stayed low.",
+      "Pauses were mostly controlled and brief.",
+      "Sentence structure was generally clear and readable."
+    ],
+    "weaknesses": [],
+    "summary": "Fluency scored 95/100 with 126.19 WPM, 0 filler words, and 2 notable pauses.",
+    "warnings": []
+  },
+  "video_analysis": {
+    "sampled_frame_count": 10,
+    "frame_sample_interval_seconds": 1.0,
+    "eye_contact": {
+      "eye_contact_score": 0,
+      "direct_gaze_frames": 0,
+      "looking_away_frames": 0,
+      "downward_gaze_frames": 0,
+      "total_face_frames": 0
+    },
+    "posture": {
+      "posture_score": 100,
+      "stable_frames": 0,
+      "leaning_frames": 0,
+      "slouching_frames": 0,
+      "instability_index": 0.0
+    },
+    "malpractice": {
+      "malpractice_confidence_score": 0,
+      "repeated_looking_away_events": 0,
+      "excessive_downward_gaze_events": 0,
+      "multiple_face_frames": 0,
+      "summary": "Detected 0 looking-away patterns, 0 downward-gaze patterns, and 0 multi-face samples."
+    },
+    "warnings": []
+  },
+  "dependencies": {
+    "ffmpeg_available": true,
+    "faster_whisper_available": true,
+    "language_tool_available": true,
+    "cv2_available": true,
+    "mediapipe_available": true
+  },
+  "report_relative_path": "tests/reports-e2e-live/sessions/647ebb3c-fe51-4e67-82f3-d290793b58d3/public-speaking/da2ae3cf19b742a7ae103429c1b6f9c6/da2ae3cf19b742a7ae103429c1b6f9c6-analysis.json",
+  "warnings": []
+}

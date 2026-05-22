@@ -1,0 +1,87 @@
+{
+  "recording_id": "de62d106da9a49a598705e0c49773704",
+  "mode": "public-speaking",
+  "processing_status": "partial",
+  "analyzed_at": "2026-05-21T06:28:11.882165Z",
+  "audio_processing": {
+    "extracted_audio_path": "tests/reports-e2e/sessions/7b8c7b6e-1a93-450f-9500-f732452b228a/public-speaking/de62d106da9a49a598705e0c49773704/20260521T062723Z-de62d106da9a49a598705e0c49773704-extracted.wav",
+    "normalized_audio_path": "tests/reports-e2e/sessions/7b8c7b6e-1a93-450f-9500-f732452b228a/public-speaking/de62d106da9a49a598705e0c49773704/20260521T062723Z-de62d106da9a49a598705e0c49773704-normalized.wav",
+    "sample_rate": 16000,
+    "duration_seconds": 9.985,
+    "normalization_applied": true,
+    "warnings": []
+  },
+  "transcript": {
+    "transcript": "",
+    "language": null,
+    "duration_seconds": 9.985,
+    "segment_count": 0,
+    "word_count": 0,
+    "segments": [],
+    "word_segments": [],
+    "warnings": [
+      "faster-whisper or its model assets are unavailable, so transcription was skipped."
+    ]
+  },
+  "communication_analysis": {
+    "fluency_score": 0,
+    "grammar_score": null,
+    "filler_word_total": 0,
+    "filler_word_frequency": 0.0,
+    "filler_word_breakdown": [],
+    "pause_count": 0,
+    "average_pause_duration": 0.0,
+    "long_pause_count": 0,
+    "words_per_minute": 0.0,
+    "pace_classification": "unknown",
+    "sentence_quality_score": 0,
+    "lexical_diversity": 0.0,
+    "grammar_issues": [],
+    "strengths": [],
+    "weaknesses": [],
+    "summary": "No transcript was available to score communication quality.",
+    "warnings": [
+      "faster-whisper or its model assets are unavailable, so transcription was skipped.",
+      "Transcript text was empty, so communication analysis is limited."
+    ]
+  },
+  "video_analysis": {
+    "sampled_frame_count": 10,
+    "frame_sample_interval_seconds": 1.0,
+    "eye_contact": {
+      "eye_contact_score": 0,
+      "direct_gaze_frames": 0,
+      "looking_away_frames": 0,
+      "downward_gaze_frames": 0,
+      "total_face_frames": 0
+    },
+    "posture": {
+      "posture_score": 100,
+      "stable_frames": 0,
+      "leaning_frames": 0,
+      "slouching_frames": 0,
+      "instability_index": 0.0
+    },
+    "malpractice": {
+      "malpractice_confidence_score": 0,
+      "repeated_looking_away_events": 0,
+      "excessive_downward_gaze_events": 0,
+      "multiple_face_frames": 0,
+      "summary": "Detected 0 looking-away patterns, 0 downward-gaze patterns, and 0 multi-face samples."
+    },
+    "warnings": []
+  },
+  "dependencies": {
+    "ffmpeg_available": true,
+    "faster_whisper_available": true,
+    "language_tool_available": true,
+    "cv2_available": true,
+    "mediapipe_available": true
+  },
+  "report_relative_path": "tests/reports-e2e/sessions/7b8c7b6e-1a93-450f-9500-f732452b228a/public-speaking/de62d106da9a49a598705e0c49773704/de62d106da9a49a598705e0c49773704-analysis.json",
+  "warnings": [
+    "faster-whisper or its model assets are unavailable, so transcription was skipped.",
+    "faster-whisper or its model assets are unavailable, so transcription was skipped.",
+    "Transcript text was empty, so communication analysis is limited."
+  ]
+}

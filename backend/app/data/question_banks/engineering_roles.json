@@ -1,0 +1,103 @@
+[
+  {
+    "role": "Backend Engineer",
+    "topic": "API Design",
+    "difficulty": "medium",
+    "question": "How would you design a versioned API for a high-growth product?",
+    "followups": [
+      "How would you handle backward compatibility during schema changes?"
+    ],
+    "expected_concepts": ["versioning", "backward compatibility", "pagination", "authentication"]
+  },
+  {
+    "role": "Backend Engineer",
+    "topic": "Docker",
+    "difficulty": "medium",
+    "question": "Explain Docker networking and when you would use bridge mode.",
+    "followups": [
+      "How does container-to-container communication differ between bridge and host mode?"
+    ],
+    "expected_concepts": ["bridge networking", "host networking", "ports", "isolation"]
+  },
+  {
+    "role": "Frontend Engineer",
+    "topic": "React Performance",
+    "difficulty": "medium",
+    "question": "How do you diagnose and fix unnecessary re-renders in a React application?",
+    "followups": [
+      "When would you avoid memoization even if performance is a concern?"
+    ],
+    "expected_concepts": ["render profiling", "memoization", "state locality", "list virtualization"]
+  },
+  {
+    "role": "Cloud Engineer",
+    "topic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "Walk me through how Kubernetes handles service discovery and traffic routing.",
+    "followups": [
+      "Where do kube-proxy and DNS fit into that flow?"
+    ],
+    "expected_concepts": ["service discovery", "kube-proxy", "dns", "cluster ip"]
+  },
+  {
+    "role": "DevOps Engineer",
+    "topic": "CI/CD",
+    "difficulty": "medium",
+    "question": "What guardrails would you put into a CI/CD pipeline before production deployment?",
+    "followups": [
+      "How would rollback strategy change for a stateful service?"
+    ],
+    "expected_concepts": ["tests", "rollback", "observability", "deployment strategy"]
+  },
+  {
+    "role": "SRE",
+    "topic": "Incident Response",
+    "difficulty": "medium",
+    "question": "How would you run an incident response process for a degraded customer-facing service?",
+    "followups": [
+      "What would you capture for the postmortem?"
+    ],
+    "expected_concepts": ["triage", "communication", "mitigation", "postmortem"]
+  },
+  {
+    "role": "Testing Engineer",
+    "topic": "Automation",
+    "difficulty": "medium",
+    "question": "How do you decide what belongs in UI automation versus API or unit tests?",
+    "followups": [
+      "What makes an automation suite maintainable over time?"
+    ],
+    "expected_concepts": ["test pyramid", "api testing", "unit tests", "maintainability"]
+  },
+  {
+    "role": "AI/ML Engineer",
+    "topic": "Model Evaluation",
+    "difficulty": "medium",
+    "question": "How would you evaluate an LLM feature before rolling it out broadly?",
+    "followups": [
+      "How do offline metrics and human review complement each other?"
+    ],
+    "expected_concepts": ["offline evaluation", "human review", "latency", "hallucination risk"]
+  },
+  {
+    "role": "Data Analyst",
+    "topic": "Experimentation",
+    "difficulty": "medium",
+    "question": "How would you analyze the outcome of an A/B test with noisy behavioral data?",
+    "followups": [
+      "What checks would you perform before trusting the result?"
+    ],
+    "expected_concepts": ["sample size", "statistical significance", "data quality", "segmentation"]
+  },
+  {
+    "role": "SDE",
+    "topic": "Data Structures",
+    "difficulty": "medium",
+    "question": "When would you choose a hash map over a tree-based structure?",
+    "followups": [
+      "How do time complexity and ordering guarantees affect that choice?"
+    ],
+    "expected_concepts": ["time complexity", "ordering", "hash collisions", "balanced trees"]
+  }
+]
+

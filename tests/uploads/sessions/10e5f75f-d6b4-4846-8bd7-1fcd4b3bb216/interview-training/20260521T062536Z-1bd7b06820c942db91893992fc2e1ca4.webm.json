@@ -1,0 +1,18 @@
+{
+  "recording_id": "1bd7b06820c942db91893992fc2e1ca4",
+  "user_id": "10e5f75f-d6b4-4846-8bd7-1fcd4b3bb216",
+  "mode": "interview-training",
+  "original_filename": "sample.webm",
+  "stored_filename": "20260521T062536Z-1bd7b06820c942db91893992fc2e1ca4.webm",
+  "content_type": "video/webm",
+  "duration_seconds": 12,
+  "file_size_bytes": 19,
+  "uploaded_at": "2026-05-21T06:25:36.032601+00:00",
+  "relative_path": "sessions/10e5f75f-d6b4-4846-8bd7-1fcd4b3bb216/interview-training/20260521T062536Z-1bd7b06820c942db91893992fc2e1ca4.webm",
+  "face_detection_state": "detected",
+  "face_detected_samples": 5,
+  "face_missing_samples": 1,
+  "processing_status": "partial",
+  "analysis_report_relative_path": "reports/sessions/10e5f75f-d6b4-4846-8bd7-1fcd4b3bb216/interview-training/1bd7b06820c942db91893992fc2e1ca4/1bd7b06820c942db91893992fc2e1ca4-analysis.json",
+  "analyzed_at": "2026-05-21T06:25:41.420559+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "recording_id": "da2ae3cf19b742a7ae103429c1b6f9c6",
+  "user_id": "647ebb3c-fe51-4e67-82f3-d290793b58d3",
+  "mode": "public-speaking",
+  "original_filename": "sample-stage4-6.mp4",
+  "stored_filename": "20260521T062904Z-da2ae3cf19b742a7ae103429c1b6f9c6.mp4",
+  "content_type": "video/mp4",
+  "duration_seconds": 10,
+  "file_size_bytes": 104890,
+  "uploaded_at": "2026-05-21T06:29:04.824451+00:00",
+  "relative_path": "sessions/647ebb3c-fe51-4e67-82f3-d290793b58d3/public-speaking/20260521T062904Z-da2ae3cf19b742a7ae103429c1b6f9c6.mp4",
+  "face_detection_state": "detected",
+  "face_detected_samples": 8,
+  "face_missing_samples": 1,
+  "processing_status": "analyzed",
+  "analysis_report_relative_path": "tests/reports-e2e-live/sessions/647ebb3c-fe51-4e67-82f3-d290793b58d3/public-speaking/da2ae3cf19b742a7ae103429c1b6f9c6/da2ae3cf19b742a7ae103429c1b6f9c6-analysis.json",
+  "analyzed_at": "2026-05-21T06:35:55.405515+00:00"
+}
